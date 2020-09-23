@@ -12,14 +12,25 @@ let numWrong = 0;
 // Loop over the chars in `word` and create divs.
 //
 const createDivsForChars = (word) => {
-  // Replace this with your code
+  for (const char of word) {
+    const div = document.createElement('div');
+    div.classList.add('letter-box');
+    div.classList.add(char);
+
+    document.querySelector('#word-container').append(div);
+  }
 };
 
 
 // Loop over each letter in `ALPHABET` and generate buttons.
 //
 const generateLetterButtons = () => {
-  // Replace this with your code
+    for (const char of ALPHABET) {
+      const btn = document.createElement('button');
+      btn.innerHTML = char;
+
+      document.querySelector('#letter-buttons').append(btn);
+    }
 };
 
 
@@ -28,14 +39,14 @@ const generateLetterButtons = () => {
 // `buttonEl` is an `HTMLElement` object.
 //
 const disableLetterButton = (buttonEl) => {
-  // Replace this with your code
+  buttonEl.setAttribute('disabled', true);
 };
 
 
 // Return `true` if `letter` is in the word.
 //
 const isLetterInWord = (letter) => {
-  // Replace this with your code
+  return document.querySelector(`div.${letter}`) !== undefined;
 };
 
 
